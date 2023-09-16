@@ -10,7 +10,7 @@ class Singleton:
     A simple singleton pattern implementation in Python.
     """
 
-    instance = None   
+    _instance = None   
 
     def __init__(self, version) -> None:
         self.version = version
@@ -20,9 +20,9 @@ class Singleton:
         """
         Returns the singleton instance.
         """
-        if not Singleton.instance:
-            Singleton.instance = Singleton(version)
-        return Singleton.instance
+        if not Singleton._instance:
+            Singleton._instance = Singleton(version)
+        return Singleton._instance
     
 
 def appSingleton():
